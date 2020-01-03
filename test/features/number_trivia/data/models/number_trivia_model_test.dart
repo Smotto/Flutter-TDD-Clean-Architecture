@@ -4,16 +4,16 @@ import 'package:clean_architecture_tdd_course/features/number_trivia/data/models
 import 'package:clean_architecture_tdd_course/features/number_trivia/domain/entities/number_trivia.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import '../../../fixtures/fixture_reader.dart';
+import '../../../../fixtures/fixture_reader.dart';
 
 void main() {
-  final tNumberTrivialModel = NumberTriviaModel(text: 'Test Text', number: 1);
+  final tNumberTriviaModel = NumberTriviaModel(text: 'Test Text', number: 1);
 
   test(
     'should be a subclass of NumberTrivia entity',
     () async {
       // assert
-      expect(tNumberTrivialModel, isA<NumberTrivia>());
+      expect(tNumberTriviaModel, isA<NumberTrivia>());
     },
   );
 
@@ -29,7 +29,7 @@ void main() {
           // act
           final result = NumberTriviaModel.fromJson(jsonMap);
           // assert
-          expect(result, equals(tNumberTrivialModel));
+          expect(result, equals(tNumberTriviaModel));
         },
       );
 
@@ -42,7 +42,7 @@ void main() {
           // act
           final result = NumberTriviaModel.fromJson(jsonMap);
           // assert
-          expect(result, equals(tNumberTrivialModel));
+          expect(result, equals(tNumberTriviaModel));
         },
       );
     },
@@ -51,7 +51,7 @@ void main() {
   group('toJson', () {
     test('should return a JSON map containing the proper data', () async {
       // act
-      final result = tNumberTrivialModel.toJson();
+      final result = tNumberTriviaModel.toJson();
       // assert
       final expectedMap = {
         "text": "Test Text",
